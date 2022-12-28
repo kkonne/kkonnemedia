@@ -1,0 +1,18 @@
+.m-0 {
+  margin: 0;
+}
+
+.mx-1 {
+  margin-left: 1rem;
+  margin-right: 1rem;
+}
+
+.font-light {
+  font-weight: 200;
+}
+
+@media screen and (min-width: 576px) {
+  .ml-sm-1 {
+    margin-left: 1rem;
+  }
+}
