@@ -3,8 +3,8 @@
 }
 
 .mx-1 {
-  margin-left: 1rem;
-  margin-right: 1rem;
+  margin-left: calc(env(safe-area-inset-left) + 1rem);
+  margin-right: calc(env(safe-area-inset-right) + 1rem);
 }
 
 .font-light {
@@ -13,6 +13,6 @@
 
 @media screen and (min-width: 576px) {
   .ml-sm-1 {
-    margin-left: 1rem;
+    margin-left: calc(env(safe-area-inset-left) + 1rem);
   }
 }
