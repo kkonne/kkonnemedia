@@ -23,44 +23,106 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap" rel="stylesheet">
 </head>
 
 <body>
-    <main class="kkonne">
-        <header>
-            <img src="assets/images/kkonne_logo_light.png" alt="Kkonne media logo" class="ml-sm-1">
-            <h1>
-                <span class="font-light">
-                    kkonne
-                </span>
-                media
+    <header>
+        <nav>
+            <a href="#about" role="navigation" data-value="About">About</a>
+            <a href="#services" role="navigation" data-value="Services">Services</a>
+            <a href="#contact" role="navigation" data-value="Contact">Contact</a>
+        </nav>
+
+        <div class="background-pattern"></div>
+        <div class="background-img"></div>
+        <img src="assets/images/kkonne_logo_light.png" alt="Kkonne media logo" class="logo-img" draggable="false">
+    </header>
+
+    <div class="separator"></div>
+
+    <section id="about" class="about">
+        <div class="container">
+            <h1 class="my-5">
+                kkonne media.
+                <br />
+                pushing the boundaries of digital marketing.
             </h1>
-        </header>
 
-        <section>
-            <h3>Reach out:</h3>
-
-            <div>
-                <a href="https://www.instagram.com/kkonnemedia" target="_blank">
-                    <div class="instagram">
-                        <img src="assets/images/instagram_logo.png" alt="Instagram logo">
-                    </div>
-
-                    <span>@kkonnemedia</span>
-                </a>
-
-                <p>/</p>
-
-                <h2>info@kkonne.com</h2>
+            <div class="my-5">
+                <p class="mb-4">See our work on</p>
+                <a href="https://www.instagram.com/kkonnemedia/" target="_blank"
+                    class="btn btn--instagram">@kkonnemedia</a>
             </div>
-        </section>
+        </div>
 
-        <footer>
-            <span class="mx-1">
-                kkonne media 2022 © All rights reserved
-            </span>
-        </footer>
-    </main>
+        <!-- <div id="image-slider" data-mouse-down-at="0" data-prev-percentage="0">
+            <img src="https://images.pexels.com/photos/3165335/pexels-photo-3165335.jpeg?auto=compress&cs=tinysrgb&dpr=1"
+                draggable="false" />
+            <img src="https://images.pexels.com/photos/735911/pexels-photo-735911.jpeg?auto=compress&cs=tinysrgb&dpr=1"
+                draggable="false" />
+            <img src="https://images.pexels.com/photos/194511/pexels-photo-194511.jpeg?auto=compress&cs=tinysrgb&dpr=1"
+                draggable="false" />
+            <img src="https://images.pexels.com/photos/2007647/pexels-photo-2007647.jpeg?auto=compress&cs=tinysrgb&dpr=1"
+                draggable="false" />
+            <img src="https://images.pexels.com/photos/2582928/pexels-photo-2582928.jpeg?auto=compress&cs=tinysrgb&dpr=1"
+                draggable="false" />
+            <img src="https://images.pexels.com/photos/2708981/pexels-photo-2708981.jpeg?auto=compress&cs=tinysrgb&dpr=1"
+                draggable="false" />
+            <img src="https://images.pexels.com/photos/4009599/pexels-photo-4009599.jpeg?auto=compress&cs=tinysrgb&dpr=1"
+                draggable="false" />
+            <img src="https://images.pexels.com/photos/9072216/pexels-photo-9072216.jpeg?auto=compress&cs=tinysrgb&dpr=1"
+                draggable="false" />
+        </div> -->
+    </section>
+
+    <section id="services" class="services container">
+        <h1 class="my-5">services we offer:
+        </h1>
+
+        <ul class="my-5">
+            <li>Graphic design</li>
+            <li>Web development</li>
+            <li>Search engine optimisation</li>
+            <li>Content creation</li>
+            <li>Advertising campaigns</li>
+            <li>Copywriting</li>
+            <li>Automation and AI analytics</li>
+        </ul>
+
+        <div class="my-5">
+            <a href="#contact" class="btn btn--default">More info</a>
+        </div>
+
+        <div class="spacer-sm"></div>
+    </section>
+
+    <section id="contact" class="contact">
+        <img src="https://images.pexels.com/photos/821754/pexels-photo-821754.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+            alt="Contact section decorative photo - two retro phones">
+        <div class="card--wrap">
+            <div class="card">
+                <h2 class="mb-3">Reach out</h2>
+                so we can arrange a meeting
+            </div>
+        </div>
+
+        <div class="container content">
+            <h3 class="mb-4">info@kkonne.com</h3>
+
+            <a href="mailto:info@kkonne.com" class="btn btn--default">Send mail</a>
+
+            <div class="spacer-md"></div>
+        </div>
+    </section>
+
+    <footer>
+        <span class="mx-1">
+            kkonne media 2022 © All rights reserved
+        </span>
+    </footer>
+
+    <script src="./main.js" defer></script>
 </body>
 
 </html>
