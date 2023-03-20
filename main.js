@@ -1,6 +1,11 @@
 const LETTERS = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 const HEADER_MENU = document.querySelector("header");
 const IMAGE_SLIDER = document.getElementById("image-slider");
+const CONTACT_FORM = document.getElementById("contact-form");
+const REGEX_PATTERNS = {
+  email:
+    /^[A-Za-z0-9]+((_|-|\+|\.)[A-Za-z0-9]+)*?@[A-Za-z0-9]+(-[A-Za-z0-9]+)*(\.[A-Za-z]{2,16})?(\.[A-Za-z]{2,6})$/,
+};
 
 const setMenuItemEffect = (item, index) => {
   item.onmouseover = (event) => {
@@ -78,15 +83,60 @@ const handleMouseUp = () => {
   IMAGE_SLIDER.dataset.prevPercentage = IMAGE_SLIDER.dataset.percentage;
 };
 
+const isFormValid = (form) => {
+  const { user_name, user_email, subject, message } = form;
+
+  if (
+    !user_name.value ||
+    !user_email.value ||
+    !subject.value ||
+    !message.value
+  ) {
+    setMessage("error", "Please fill out all fields.");
+    return false;
+  }
+
+  if (!REGEX_PATTERNS.email.test(user_email.value)) {
+    setMessage("error", "Email format is wrong. Please check email input.");
+    return false;
+  }
+
+  return true;
+};
+
+const setMessage = (type, message) => {
+  const messageTypeId = `alert-${type}`;
+  const counterMessageTypeId =
+    type !== "error" ? "alert-error" : "alert-success";
+  const messageDurationInSeconds = 7;
+  document.getElementById(counterMessageTypeId).style.display = "none";
+  document.getElementById(messageTypeId).textContent = message;
+  document.getElementById(messageTypeId).style.display = "block";
+  setTimeout(() => {
+    document.getElementById(messageTypeId).style.display = "none";
+  }, 1000 * messageDurationInSeconds);
+};
+
+const handleFormSubmit = (event) => {
+  event.preventDefault();
+
+  if (!isFormValid(event.target)) return;
+
+  emailjs.sendForm("service_002u6cn", "template_all6mjd", CONTACT_FORM).then(
+    () => {
+      setMessage("success", "Success! Email has been sent.");
+      event.target.reset();
+    },
+    (error) => {
+      setMessage("error", "An error ocurred. Please try again later.");
+    }
+  );
+};
+
 const onInit = () => {
   document.querySelectorAll("nav > a").forEach(setMenuItemEffect);
 
-  // window.onmousedown = (event) => handleMouseDown(event);
-  // window.ontouchstart = (event) => handleMouseDown(event.touches[0]);
-  // window.onmousemove = (event) => handleMouseMove(event);
-  // window.ontouchmove = (event) => handleMouseMove(event.touches[0]);
-  // window.onmouseup = () => handleMouseUp();
-  // window.ontouchend = () => handleMouseUp();
+  CONTACT_FORM.addEventListener("submit", handleFormSubmit);
 };
 
 onInit();

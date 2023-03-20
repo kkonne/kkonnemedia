@@ -77,8 +77,7 @@
     </section>
 
     <section id="services" class="services container">
-        <h1 class="my-5">services we offer:
-        </h1>
+        <h2 class="my-5">services we offer:</h2>
 
         <ul class="my-5">
             <li>Graphic design</li>
@@ -99,30 +98,44 @@
 
     <section id="contact" class="contact">
         <img src="https://images.pexels.com/photos/821754/pexels-photo-821754.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
-            alt="Contact section decorative photo - two retro phones">
-        <div class="card--wrap">
-            <div class="card">
-                <h2 class="mb-3">Reach out</h2>
-                so we can arrange a meeting
-            </div>
-        </div>
+            alt="Contact section decorative photo - two retro phones" draggable="false">
 
         <div class="container content">
-            <h3 class="mb-4">info@kkonne.com</h3>
+            <h2>Reach out!</h2>
+            <form id="contact-form" class="contact-form">
+                <input type="text" placeholder="Name" aria-label="Name" aria-required="true" id="name-input"
+                    class="text-input" name="user_name" />
+                <input type="text" placeholder="Email" aria-label="Email" aria-required="true" id="email-input"
+                    class="text-input" name="user_email" />
+                <input type="text" placeholder="Subject" aria-label="Subject" aria-required="true" id="subject-input"
+                    class="text-input" name="subject" />
+                <textarea type="text" placeholder="Message" aria-label="Message" aria-required="true" id="message-input"
+                    rows="4" class="text-input" name="message"></textarea>
+                <button type="submit" class="btn btn--default">Send mail</button>
 
-            <a href="mailto:info@kkonne.com" class="btn btn--default">Send mail</a>
+                <span class="alert alert--error display-none" id="alert-error"></span>
+                <span class="alert alert--success display-none" id="alert-success"></span>
+            </form>
 
-            <div class="spacer-md"></div>
+            <p class="text-sm">or send an email to info@kkonne.com</p>
         </div>
     </section>
 
     <footer>
         <span class="mx-1">
-            kkonne media 2022 © All rights reserved
+            kkonne media 2023 © All rights reserved
         </span>
     </footer>
 
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
     <script src="./main.js" defer></script>
+    <script type="text/javascript">
+        const EMAILJS_PUBLIC = "SrUDixuexaD02oG9P";
+        (function () {
+            emailjs.init(EMAILJS_PUBLIC);
+        })();
+    </script>
+
 </body>
 
 </html>
