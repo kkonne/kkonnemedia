@@ -6,6 +6,7 @@ const REGEX_PATTERNS = {
   email:
     /^[A-Za-z0-9]+((_|-|\+|\.)[A-Za-z0-9]+)*?@[A-Za-z0-9]+(-[A-Za-z0-9]+)*(\.[A-Za-z]{2,16})?(\.[A-Za-z]{2,6})$/,
 };
+let IS_MESSAGE_SENT = false;
 
 const setMenuItemEffect = (item, index) => {
   item.onmouseover = (event) => {
@@ -84,6 +85,11 @@ const handleMouseUp = () => {
 };
 
 const isFormValid = (form) => {
+  if (IS_MESSAGE_SENT) {
+    setMessage("error", "Spam detected. Please try again later.");
+    return false;
+  }
+
   const { user_name, user_email, subject, message } = form;
 
   if (
@@ -126,6 +132,11 @@ const handleFormSubmit = (event) => {
     () => {
       setMessage("success", "Success! Email has been sent.");
       event.target.reset();
+      const SPAM_TIMEOUT_IN_SECONDS = 60;
+      IS_MESSAGE_SENT = true;
+      setTimeout(() => {
+        IS_MESSAGE_SENT = false;
+      }, 1000 * SPAM_TIMEOUT_IN_SECONDS);
     },
     (error) => {
       setMessage("error", "An error ocurred. Please try again later.");
