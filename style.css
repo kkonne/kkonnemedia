@@ -211,6 +211,12 @@ header > img.logo-img {
   margin: 0 auto;
   padding: 2rem 0;
 }
+.image-slider {
+  height: 50vmin;
+  display: flex;
+  overflow-y: scroll;
+  gap: 2rem;
+}
 section.services ul {
   list-style-type: none;
   padding: 0;
@@ -221,7 +227,7 @@ section.services ul li {
 }
 section.contact img {
   width: 100%;
-  height: 25vmin;
+  height: 35vmin;
   object-fit: cover;
   object-position: center;
 }
