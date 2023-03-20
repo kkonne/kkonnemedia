@@ -82,6 +82,9 @@ h2 {
 .text-sm {
   font-size: 0.875rem;
 }
+.font-light {
+  font-weight: 200;
+}
 .display-none {
   display: none;
 }
@@ -224,6 +227,16 @@ section.services ul {
 section.services ul li {
   font-size: 1.25rem;
   margin: 1.5rem 0;
+}
+section.contact {
+  position: relative;
+}
+section.contact h2.contact-title {
+  position: absolute;
+  color: #191919;
+  text-align: center;
+  left: 50%;
+  translate: -50% 0;
 }
 section.contact img {
   width: 100%;
