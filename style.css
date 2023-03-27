@@ -219,6 +219,13 @@ header > img.logo-img {
   display: flex;
   overflow-y: scroll;
   gap: 2rem;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+.image-slider::-webkit-scrollbar {
+  background: transparent;
+  width: 0;
+  height: 0;
 }
 section.services ul {
   list-style-type: none;
