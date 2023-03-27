@@ -215,17 +215,45 @@ header > img.logo-img {
   padding: 2rem 0;
 }
 .image-slider {
+  position: relative;
+  width: 100%;
+  overflow-x: hidden;
   height: 50vmin;
   display: flex;
-  overflow-y: scroll;
-  gap: 2rem;
-  scrollbar-width: none;
-  -ms-overflow-style: none;
+  align-items: center;
 }
-.image-slider::-webkit-scrollbar {
-  background: transparent;
-  width: 0;
-  height: 0;
+.image-slider .shadow {
+  position: absolute;
+  z-index: 20;
+  top: 0;
+  width: 5rem;
+  height: 100%;
+  background: none;
+}
+.shadow.left-shadow {
+  left: 0;
+  background: linear-gradient(to right, #1f1f1f, #1f1f1f00);
+  -webkit-background: linear-gradient(to right, #1f1f1f, #1f1f1f00);
+}
+.shadow.right-shadow {
+  right: 0;
+  background: linear-gradient(to left, #1f1f1f, #1f1f1f00);
+  -webkit-background: linear-gradient(to left, #1f1f1f, #1f1f1f00);
+}
+.image-slider .assets {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  animation: slide 40s linear infinite;
+}
+.image-slider .assets img {
+  height: 100%;
+  margin: 0 2rem;
+}
+@keyframes slide {
+  100% {
+    transform: translateX(-100%);
+  }
 }
 section.services ul {
   list-style-type: none;
